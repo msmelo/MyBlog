@@ -1,7 +1,7 @@
 .page-header {
   background-color: #B98DDD;
   margin-top: 0;
-  padding: 5px 20px 1px 40px;
+  padding: 8px 20px 1px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -9,6 +9,7 @@
   font-size: 42pt;
   font-family: 'Shadows Into Light Two', cursive;
   text-decoration: none;
+  margin-top: 24;
 }
 
 .content {
@@ -22,7 +23,11 @@ h1, h2, h3, h4{
 h5{
   font-family: 'Raleway', sans-serif;
   color: #000000;
-  margin-right: 950px;
+  margin-left: 150px;
+}
+h6 {
+  font-size: 10pt;
+  margin-left: 255px;
 }
 
 .date {
@@ -57,4 +62,10 @@ p {
   color: #000000;
   font-family: 'Gentium Basic', serif;
   font-size: 14pt;
+}
+
+.img-ju {
+  margin-top: 5px;
+  margin-right: 8px;
+  width: 280px;
 }
