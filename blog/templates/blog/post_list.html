@@ -1,29 +1,13 @@
-{% load staticfiles %}
-<html>
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Raleway|Shadows+Into+Light+Two" rel="stylesheet">
-    <title>Ju's blog</title>
-  </head>
-  <body>
-    <div class="page-header">
-      <img class="img-ju" src="https://avatars0.githubusercontent.com/u/47339300?s=400&u=bad5b2aafe845fc3df33bb96d576e12328ae7b2d&v=4" height="50%" width="50%"alt="Euzinha" align="left"/>
-      <h1><a href="/">Ju's blog</a></h1>
-      <h2>How much time will I last awake?</h2>
-      <h3>Take your guess...</h3>
-      <h4>Just a reminder: I can look young and be 24, but my back is around 76 and is already complaining</h4>
-      <h5>Hey! I'm very very excited to build my own blog! Here I plan to test my knowledge with programming and to write whatever comes to my mind. Feel free to give me compliments and to send me good cakes recipes :)</h5>
-      <h6 class="contactme">Contact me: <a href="https://github.com/msmelo"><img src="https://avatars0.githubusercontent.com/u/9919?s=280&v=4" height="5%" width="3%" alt="github"> </a><a href="https://www.linkedin.com/in/julianarotsen/"><img src="https://techpixies.com/wp-content/uploads/2018/11/linkedin_square_color-512.png" height="5.7%" width="3%" alt="linkedin"> </a><a href="https://twitter.com/jmelo45184878"><img src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" height="5.7%" width="3%" alt="twitter"></a></h6>
-    </div>
+{% extends 'blog/base.html' %}
 
+{% block content %}
     {% for post in posts %}
         <div class="post">
-          <h1><a href="">{{ post.title }}</a></h1>
-          <p>{{ post.text|linebreaksbr }}</p>
-          <p>published on: {{ post.published_date }}</p>
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-      {% endfor %}
-  </body>
-</html>
+    {% endfor %}
+{% endblock %}

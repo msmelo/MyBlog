@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    <head>
+        <title>Ju's Blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Raleway|Shadows+Into+Light+Two" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+          {% if user.is_authenticated %}
+              <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          {% endif %}
+          <img class="img-ju" src="https://avatars0.githubusercontent.com/u/47339300?s=400&u=bad5b2aafe845fc3df33bb96d576e12328ae7b2d&v=4" height="50%" width="25%"alt="Juliana" align="left"/>
+            <h1><a href="/">Ju's Blog</a></h1>
+              <h2>Juliana Melo</h2>
+                <h3>Engineering student, Forró dancer, cake lover</h3>
+                  <h4>Belo Horizonte - Brazil</h4>
+                    <h5>Hey! I'm very very excited to build my own blog! Here I plan to test my knowledge with programming and to write whatever comes to my mind. Feel free to contact me to send me coments or good cakes recipes :)</h5>
+                      <h6 class="contactme">Contact me: <a href="https://github.com/msmelo"><img src="https://avatars0.githubusercontent.com/u/9919?s=280&v=4" height="5%" width="3%" alt="github"> </a><a href="https://www.linkedin.com/in/julianarotsen/"><img src="https://techpixies.com/wp-content/uploads/2018/11/linkedin_square_color-512.png" height="5.7%" width="3%" alt="linkedin"> </a><a href="https://twitter.com/jmelo45184878"><img src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" height="5.7%" width="3%" alt="twitter"></a></h6>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
